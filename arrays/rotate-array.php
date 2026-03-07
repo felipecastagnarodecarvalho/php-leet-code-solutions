@@ -7,11 +7,11 @@ class Solution {
     /**
      * Rotate the array to the right by k steps.
      *
-     * @param Integer[] $nums
-     * @param Integer $k
+     * @param int[] $nums
+     * @param int $k
      * @return NULL
      */
-    function rotate(&$nums, $k) {
+    function rotate(&$nums, int $k) {
         // Get the length of the array
         $n = count($nums);
 
@@ -32,18 +32,17 @@ class Solution {
     /**
      * Helper function to reverse a portion of the array between two indices.
      *
-     * @param Integer[] $nums
-     * @param Integer $start
-     * @param Integer $end
+     * @param int[] $nums
+     * @param int $start
+     * @param int $end
      * @return void
      */
-    private function reverse(&$nums, $start, $end) {
+    private function reverse(&$nums, int $start, int $end) {
         while ($start < $end) {
-            // Swap elements at indices $start and $end
             $temp = $nums[$start];
             $nums[$start] = $nums[$end];
             $nums[$end] = $temp;
-            // Move towards the center
+
             $start++;
             $end--;
         }

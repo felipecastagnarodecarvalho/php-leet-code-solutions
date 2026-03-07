@@ -10,13 +10,12 @@
 class Solution {
 
     /**
-     * @param Integer[] $nums
-     * @param Integer $target
-     * @return Integer[]
+     * @param int[] $nums
+     * @param int $target
+     * @return int[]
      */
     function twoSum($nums, $target) {
         $missingToTarget = [];
-        $targetIndexes = [];
 
         for($i = 0; $i < count($nums); $i++)
         {
