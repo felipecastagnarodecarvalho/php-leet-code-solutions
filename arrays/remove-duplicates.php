@@ -12,17 +12,22 @@
  * elements beyond `k` are not important.
  */
 class Solution {
+
     /**
-     * Removes duplicates from a sorted array in-place and returns the count of unique elements.
-     *
-     * @param Integer[] $nums The reference to the input array.
-     * @return Integer The count of unique elements in the modified array.
+     * @param Integer[] $nums
+     * @return Integer
      */
     function removeDuplicates(&$nums) {
-        // Remove duplicates by using the array_unique function, which keeps the first occurrence.
-        $nums = array_unique($nums);
+        $k = 0;
 
-        // Return the count of unique elements in the modified array.
-        return count($nums);
+        foreach ($nums as $num) {
+            // Allow first 2 elements OR ensure current != nums[k-2]
+            if ($k < 2 || $num !== $nums[$k - 2]) {
+                $nums[$k] = $num;
+                $k++;
+            }
+        }
+
+        return $k;
     }
 }
